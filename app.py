@@ -6,13 +6,13 @@ from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QPushButton, QVBoxLay
 app = QApplication([])
 main_window = QWidget()
 main_window.setWindowTitle("My First App with PyQt5 yaaaay!")
-main_window.resize(200, 300)
+main_window.resize(300, 200)
 
 # Create all widgets needed in app
 title_text = QLabel("Random Words")
-text1 = QLabel("Vietnam")
+text1 = QLabel("?")
 text2 = QLabel("?")
-text3 = QLabel("goodbye")
+text3 = QLabel("?")
 
 button1 = QPushButton("Click me")
 button2 = QPushButton("Click me")
@@ -25,8 +25,22 @@ row3 = QHBoxLayout()
 
 
 # Design your layout, add your widgets to the screen
+row1.addWidget(title_text, alignment=Qt.AlignCenter)
+
+row2.addWidget(text1, alignment=Qt.AlignCenter)
+row2.addWidget(text2, alignment=Qt.AlignCenter)
+row2.addWidget(text3, alignment=Qt.AlignCenter)
+
+row3.addWidget(button1, alignment=Qt.AlignCenter)
+row3.addWidget(button2, alignment=Qt.AlignCenter)
+row3.addWidget(button3, alignment=Qt.AlignCenter)
 
 # Set the final layout to the main window & events
+master_layout.addLayout(row1)
+master_layout.addLayout(row2)
+master_layout.addLayout(row3)
+
+main_window.setLayout(master_layout)
 
 # Show and execute your app
 main_window.show()
